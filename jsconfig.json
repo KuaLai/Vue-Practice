@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "baseUrl": "src",
+    "resolveJsonModule": true,
+    "paths": {
+      "api": ["./api/index"],
+      "components/*": ["./components/*"],
+      "configs": ["./configs/index"],
+      "containers/*": ["./containers/*"],
+      "utils": ["./utils/index"]
+    }
+  },
+  "include": ["src/**/*"]
+}
