@@ -1,21 +1,30 @@
-<template lang="pug">
-    div.experience
-        div.experience__title 經歷
-        div.experience__timeline
-            div.experience__item(v-for="item in list")
-                div.experience__item-title {{ item.title }}，{{ item.years }}
-                div.experience__job-name {{ item.name }}
-                div.experience__content
-                    ul(v-for="app in item.application")
-                        li(v-for="skill in app") {{ skill }}
-                    div.work__list
-                      div.work__item-title {{ item.worktitle }}
-                      div.work__item(v-for="work in item.worklist")
-                        div.work__item-subTitle {{ work.title }}
-                        div.work__item-list(v-for="item in work.list") {{ item }}
-            div.school__item(v-for="s in school")
-              div.school__item-title {{ s.name }}，{{ s.years}} 畢業
-              div.school__department-name {{ s.department}}
+<template>
+  <div class="experience">
+    <div class="div experience__title">經歷</div>
+    <div class="div experience__timeline">
+      <div class="experience__item" v-for="item in list" :key="item.years">
+        <div class="experience__item-title"> {{ item.title }}，{{ item.years }} </div>
+        <div class="experience__job-name"> {{ item.name }} </div>
+        <div class="experience__content">
+          <ul v-for="app in item.application" :key="app.index">
+            <li v-for="skill in app" :key="skill.id"> {{ skill }} </li>
+          </ul>
+          <div class="work__list">
+            <div class="work__item-title"> {{ item.worktitle }} </div>
+            <div class="work__item" v-for="work in item.worklist" :key="work.id">
+              <div class="work__item-subTitle">{{ work.title }}</div>
+              <div class="work__item-list" v-for="item in work.list" :key="item.index"> {{ item }} </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="school__item" v-for="s in school" :key="s.id">
+        <div class="school__item-title"> {{ s.name }}，{{ s.years}} 畢業</div>
+        <div class="school__department-name"> {{ s.department}} </div>
+      </div>
+    </div>
+  </div>
+    
 </template>
 
 <script>
@@ -153,6 +162,7 @@ export default {
           title: "亞東電子商務(原：Go Happy快樂購物網/現：friday購物)",
           years: "",
           name: "視覺設計師",
+          application: "",
           worktitle: "任內負責職務",
           worklist: {
             1: {
@@ -169,6 +179,7 @@ export default {
           title: "數位因子科技網路有現公司",
           years: "",
           name: "視視覺美術設計",
+          application: "",
           worktitle: "任內負責職務",
           worklist: {
             1: {

@@ -5,6 +5,7 @@
 @import "default";
 @import "nav";
 @import "layout";
+@import "profile";
 @import "page";
 @import "footer";
 @import "bicycle";
@@ -20,6 +21,7 @@ $bg-item: bg;
 h1 {
     color: red;
 }
+
 .layout-frame {
     position: relative;
     max-width: 1400px;
