@@ -1,4 +1,6 @@
 .profile {
+    position: relative;
+    z-index: 11;
     text-align: center;
     &__img {
         transform: translate(0,-75px);
@@ -21,67 +23,112 @@
     }
 }
 .experience {
-    text-align: center;
-    @include respond-to(ssm) {
-        text-align: left;
-    }
+    
     &__title {
+        text-align: center;
         font-size: 1.8rem;
-        @include respond-to(ssm) {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        @include respond-to(sm) {
             font-size: 1.2rem;
-            padding-left: 0.5rem;            
             text-align: left;
+            width: 90%;
+            margin: 0 auto 1rem;
+        }
+    }
+    &__timeline {
+        position: relative;
+        width: 87%;
+        max-width: 1000px;
+        margin: 0 auto;
+        &:before,&::before {
+            content: '';
+            @include circle(8px,#222);
+            @include translate-center;
+            top: 0;
+            transform: translate(-50%, 0%);
+            @include respond-to(sm) {
+                left: 0;
+            }
+        }
+        &:after,&::after {
+            content: '';
+            width: 1px;
+            height: 96.4%;
+            @include translate-center;
+            top: 0;
+            transform: translate(-50%, 0%);
+            background: #222;
+            @include respond-to(sm) {
+                left: 0;
+                height: 98.4%;
+            }
         }
     }
     &__item {
+        position: relative;
+        width: 42%;
+        text-align: left;
+        margin-top: 0;
+        margin-right: 2%;
+        margin-bottom:1rem;
+        margin-left: 2.5%;
+        padding: 1rem;
+        background: #fff;
+        border-radius: 4px;
+        float: left;
 
-        &--school {
-            float: none;
-        }
+        $item-top: 0%,45%,-10%,60%,0%;
 
-        $item-w: 37%,6%,50%,6%,60%;
-        @for $i from 1 through length($item-w) {
+        @for $i from 1 to length($item-top) {
             &:nth-child(#{$i}){
-                .experience__item-title {
-                    &:before,&::before {
-                        width: nth($item-w,$i);
-                        @include respond-to(ssm) {
-                            width: 10%;
-                        }
-                    }
+                margin-top: nth($item-top,$i);
+                @include respond-to(sm) {
+                    margin-top: 0;
                 }
             }
+        }
+        &:nth-child(odd) {
+            &:before,&::before {
+                content: '';
+                position: absolute;
+                right: -15px;
+                top: 4%;
+                @include triangle(15px,#fff,right);
+                @include respond-to(sm) {
+                    right: auto;
+                    left: -15px;
+                    border-left: 0;
+                    @include triangle(15px,#fff,left);
+                }
+            }
+        }
+        &:nth-child(even) {
+            &:before,&::before {
+                content: '';
+                position: absolute;
+                left: -15px;
+                top: 4%;
+                margin-left: 0;
+                margin-right: 0;
+                @include triangle(15px,#fff,left);
+            }
+        }
+        @include respond-to(sm) {
+            width: 90%;
+            margin-left: 1.5rem;
+        }
+        @include respond-to(ssm) {
+            width: 86%;
+            margin-left: 1.2rem;
         }
     }
     &__item-title {
         font-size: 1.2rem;
         font-weight: bold;
-        // &:after,&::after {
-        //     content: '';
-        //     position: absolute;
-        //     top: 1.5rem;
-        //     right: -12px;
-        //     display: block;
-        //     @include circle(1rem,#fff);
-        //     border: 2px solid #000;
-        //     @include respond-to(ssm) {
-        //         right: auto;
-        //         left: -2.4rem;
-        //     }
-        // }
-        // &:before,&::before {
-        //     content: '';
-        //     position: absolute;
-        //     top: 2rem;
-        //     right: -12px;
-        //     display: block;
-        //     height: 1px;
-        //     background: #000;
-        //     @include respond-to(ssm) {
-        //         right: auto;
-        //         left: -1.2rem;
-        //     }
-        // }
+        @include respond-to(ssm) {
+            font-size: 1rem;
+        }
     }
     &__job-name {
         display: inline-block;
@@ -97,9 +144,9 @@
         }
         li {
             display: inline-block;
-            //background: rgba(122, 122, 122, 0.6);
             color: #fff;
             padding: 0 0.6rem;
+            margin: 0 0.2rem 0.4rem;
             @include radius(4px);
             @for $i from 2 through length($item-bg) {
                 &:nth-child(#{$i}){
@@ -107,7 +154,7 @@
                 }
             }
             @include respond-to(ssm) {
-                margin: 0 0 0.5rem 0;
+                margin: 0 0.5rem 0.5rem 0;
             }
             &:first-child {
                 display: block;
@@ -123,9 +170,25 @@
 }
 .school {
     &__item {
-        margin: 1rem 0; 
-        @include respond-to(ssm) {
+        clear: both;
+        margin: 1rem auto; 
+        width: 80%;
+        text-align: center;
+        &:before,&::before {
+            content: '';
+            display: block;
+            @include circle(8px,#222);
+            margin: 0 auto 1rem;
+            @include respond-to(sm) {
+                position: absolute;
+                left: -1.25rem;
+                top: 0.75rem;
+            }
+        }
+        @include respond-to(sm) {
+            position: relative;
             margin: 1rem ;
+            text-align: left;
         }
     }
     &__item-title {
@@ -159,11 +222,101 @@
         }
     }
 }
+
 .skill {
+    *,*:before,*:after {
+      box-sizing: border-box;
+    }
     text-align: center;
     padding: 2rem 0;
+    
+    .set-size {
+        font-size: 180px;
+        margin: 1rem;
+        @include respond-to(ssm) {
+            font-size: 12em;
+            margin: 0.5rem;
+        }
+    }
+
+    .charts-container {
+        &:after {
+            clear: both;
+            content: '';
+            display: table;
+        }
+    }
+
+    .pie-wrapper {
+        @include size($default-size, $default-size);
+        position: relative;
+
+        .pie {
+            @include size(100%, 100%);
+            clip: rect(0, $default-size, $default-size, $default-size / 2);
+            left: 0;
+            position: absolute;
+            top: 0;
+
+            .half-circle {
+                @include size(100%, 100%);
+                border: ($default-size / 14) solid #3498db;
+                border-radius: 50%;
+                clip: rect(0, $default-size / 2, $default-size, 0);
+                left: 0;
+                position: absolute;
+                top: 0;
+            }
+        }
+
+        .label {
+            background: $bg-color;
+            border-radius: 50%;
+            bottom: $label-font-size-redo / 10;
+            color: #ecf0f1;
+            cursor: default;
+            display: block;
+            font-size: $label-font-size;
+            left: $label-font-size-redo / 10;
+            line-height: $label-font-size-redo * .70;
+            position: absolute;
+            right: $label-font-size-redo / 10;
+            text-align: center;
+            top: $label-font-size-redo / 10;
+
+            .smaller {
+                color: #bdc3c7;
+                font-size: .45em;
+                padding-bottom: 20px;
+                vertical-align: super;
+            }
+        }
+
+        .shadow {
+            @include size(100%, 100%);
+            border: $default-size / 10 solid #bdc3c7;
+            border-radius: 50%;
+        }
+
+        &.style-2 {
+            .label {
+                background: none;
+                color: #7f8c8d;
+
+                .smaller {
+                    color: #bdc3c7;
+                }
+            }
+        }
+
+        
+
+
+    }
+
     &__title {
         font-size: 1.8rem;
+
         @include respond-to(ssm) {
             font-size: 1.2rem;
             padding: 0 0 0.5rem 0;
@@ -171,20 +324,69 @@
             border-bottom: 1px solid #4a4a4a;
         }
     }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+        flex-wrap: wrap;
+    }
+
     &__item {
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
-        // @include circle(150px,#fff);
-        // border: 5px solid #4a4a4a;
-        margin: 2rem 1rem;
-        width: 150px;
+       
         .item {
             @include translate-center;
+            z-index: 3;
         }
-        span {
-            font-size: 2rem;
-            line-height: 2rem;
+
+        .item-title {
+            font-size: 15px;
+            @include respond-to(ssm) {
+                font-size: 0.8rem;
+            }
+        }
+
+        .item-percent {
+            font-size: 2.4rem;
+            line-height: 2.8rem;
+            font-weight: bold;
+            color: #4a4a4a;
+
+            span {
+                font-size: 15px;
+                display: inline-block;
+                margin-left: -6px;
+            }
+        }
+
+
+    }
+
+    &:nth-child(1) {
+        $item-percent: 95, 95, 80, 80, 50, 0;
+
+        @for $i from 1 to length($item-percent) {
+            .skill__item {
+                &:nth-child(#{$i}) {
+                    .pie-wrapper {
+                        @include draw-progress(nth($item-percent, $i), #3498db);
+                    }
+                }
+            }
+        }
+    }
+    &:nth-child(2) {
+        $item-percent: 95, 95, 90, 65, 55, 0;
+
+        @for $i from 1 to length($item-percent) {
+            .skill__item {
+                &:nth-child(#{$i}) {
+                    .pie-wrapper {
+                        @include draw-progress(nth($item-percent, $i), #ff6633);
+                    }
+                }
+            }
         }
     }
 }

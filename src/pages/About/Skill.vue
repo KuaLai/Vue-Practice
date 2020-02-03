@@ -3,9 +3,20 @@
     <div class="skill" v-for="item in list" :key="item.id">
       <div class="skill__title">{{ item.title }}</div>
       <div class="skill__list">
-        <div class="skill__item" v-for="skill in item.skill" :key="skill.id">
-          <div class="item-title">{{ skill.title }}</div>
-          <div class="item-percent">{{ skill.percent }}</div>
+        <div class="skill__item set-size charts-container" v-for="skill in item.skill" :key="skill.id">
+          <div class="pie-wrapper">
+            <div class="item">
+              <div class="item-title">{{ skill.title }}</div>
+              <div class="item-percent">
+                {{ skill.percent }}
+                <span>%</span>
+              </div>
+            </div>
+            <div class="pie">
+              <div class="left-side half-circle"></div>
+              <div class="right-side half-circle"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -65,7 +76,7 @@ export default {
             },
             5: {
               title: "javascript/gulp/vue",
-              percent: "50"
+              percent: "55"
             }
           }
         }

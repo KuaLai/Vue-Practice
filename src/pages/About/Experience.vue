@@ -1,7 +1,7 @@
 <template>
   <div class="experience">
-    <div class="div experience__title">經歷</div>
-    <div class="div experience__timeline">
+    <div class="experience__title">經歷</div>
+    <div class="experience__timeline">
       <div class="experience__item" v-for="item in list" :key="item.years">
         <div class="experience__item-title"> {{ item.title }}，{{ item.years }} </div>
         <div class="experience__job-name"> {{ item.name }} </div>
@@ -46,19 +46,19 @@ export default {
           worklist: {
             1: {
               title: "活動網頁",
-              list: ["美源男士-拍照變臉活動","兆豐銀行Q3線上結匯","大潤發奔跑吧新年-購物車小遊戲","Whoo后-母親節活動&VIP預購會","格致中學-招生網頁"]
+              list: ["美源男士-拍照變臉活動","兆豐銀行Q3線上結匯","大潤發奔跑吧新年-購物車小遊戲","Whoo后-母親節活動&VIP預購會","格致中學-招生網頁","dsm帝斯曼營養品藻油Life-產品介紹"]
             },
             2: {
               title: "互動插頁",
-              list: ["院線電影宣傳","NIKE即時天氣顯示","屈臣氏蛋黃哥集點活動","星展銀行錢包接接樂","拜耳發泡錠互動頁","中信金融圈區美食街推廣"]
+              list: ["院線電影宣傳","NIKE即時天氣顯示","屈臣氏蛋黃哥集點活動","星展銀行錢包接接樂","拜耳發泡錠互動頁","中信金融圈區美食街推廣","瑞穗鮮乳2019Q4網路宣傳"]
             },
             3: {
               title: "品牌合作",
-              list: ["Nike","Adidas","Sulwhasoo雪花秀","Whoo后","CLINIQUE倩碧","屈臣氏","大潤發","Eclipse易口舒","Vornado循環扇","KKDAY","兆豐銀行","星展銀行","花旗銀行"]
+              list: ["Nike","Adidas","統一純喫茶","7-11、全家","Sulwhasoo雪花秀","Whoo后","CLINIQUE倩碧","屈臣氏","大潤發","Eclipse易口舒","Vornado循環扇","中華賓士","KKDAY","兆豐銀行","星展銀行","花旗銀行"]
             },
             4: {
               title: "各國專案協作",
-              list: ["日本：與PM溝通並製作活動頁","香港：製作廣告專案&活動頁","泰國：製作廣告專案&活動頁"]
+              list: ["日本：與PM溝通並製作活動頁與廣告專案","香港：製作廣告專案&活動頁","泰國：製作廣告專案&活動頁"]
             }
           }
         },
@@ -136,55 +136,23 @@ export default {
           }
         },
         {
-          title: "Mostwant 最想科技股份有限公司",
-          years: "",
-          name: "網頁設計師",
-          application: {
-            skills: ["網頁/網站設計與切版","html5/css3","RWD","sass/sublime text 3","susy","bootstrap","SVG & Web Font 字型庫製作"]
-          },
-          worktitle: "設計相關實例",
-          worklist: {
-            1: {
-              title: "網站實例",
-              list: ["Mostwant 最想科技 招商網站","mostWant 最想商城","商城設計、會員中心、結帳頁面、商店街頁面","促銷活動頁","EDM"]
-            },
-            2: {
-              title: "Logo設計/名片設計",
-              list: ["商城Logo設計/app樣式設計","客製化商城內其他店家Logo設計","商城/公司 名片"]
-            },
-            3: {
-              title: "視覺設計與管理",
-              list: ["app視覺、站內視覺、EDM視覺、活動banner","banner工作安排、視覺教稿"]
-            }
-          }
-        },
-        {
           title: "亞東電子商務(原：Go Happy快樂購物網/現：friday購物)",
-          years: "",
+          years: "2011 年 9 月 - 2015 年 1 月",
           name: "視覺設計師",
           application: "",
           worktitle: "任內負責職務",
           worklist: {
             1: {
               title: "設計相關實例",
-              list: ["配合各館別所需形象與PM溝通","網站所需製作EDM、Banner、活動視覺、GIF動畫","視覺發想及切版",]
+              list: ["配合各館別所需形象與PM溝通","網站所需製作EDM、Banner、活動視覺、GIF動畫","視覺發想及切版"]
             },
             2: {
+              title: "視覺設計與管理",
+              list: ["app視覺、站內視覺、EDM視覺、活動banner","banner工作安排、視覺教稿"]
+            },
+            3: {
               title: "福委會幹部",
               list: ["發想各大節日活動/聖誕節公司小天使交換禮物","活動關卡主持人"]
-            }
-          }
-        },
-        {
-          title: "數位因子科技網路有現公司",
-          years: "",
-          name: "視視覺美術設計",
-          application: "",
-          worktitle: "任內負責職務",
-          worklist: {
-            1: {
-              title: "設計相關實例",
-              list: ["設計公司形象之視覺規範、視覺設計","網站視覺規劃與網頁製作","flash、DIV切版、css調整&排版","與業務、企劃、程式設計等相關人員配合","後台建置","協同執行與討論專案企劃"]
             }
           }
         }

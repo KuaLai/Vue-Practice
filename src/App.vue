@@ -9,7 +9,7 @@
         @enter="enter"
         @afterEnter="afterEnter")
         router-view.mainContent.view
-      Footer(msg="版權所有 © 2019 Copyright KuaLai")
+      Footer(msg="版權所有 © 2020 Copyright KuaLai")
 </template>
 
 
@@ -58,6 +58,7 @@ export default {
     script: [
       { type: 'text/javascript', src: 'https://code.jquery.com/jquery-latest.js',  body: true}, // Insert in body
       { type: 'text/javascript', src: 'https://kualai.github.io/js/star.js', body: true, undo: false},
+      { type: 'text/javascript', src: 'js/easyPie.js', body: true, undo: false},
     ],
     style: [
       { type: 'text/css', src: 'css/main.min.css', undo: false },
