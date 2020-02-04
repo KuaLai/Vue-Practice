@@ -1,7 +1,9 @@
 <template>
     <div class="introduction">
          <div class="profile" v-for="item in list" :key="item.id">
-            <div class="profile__img"><img v-bind:src="'assets/images/' + item.image" alt=""></div>
+            <div class="profile__img">
+              <img :src="require('assets/images/' + item.image)" alt="KuaLai"/>
+            </div>
             <div class="profile__name"> {{ item.name }} </div>
             <div class="profile__title"> {{ item.title }} </div>
             <div class="profile__content">
@@ -30,7 +32,6 @@ export default {
       ],
     };
   },
-  
 };
 </script>
 

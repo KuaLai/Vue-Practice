@@ -30,7 +30,7 @@ header {
     overflow: hidden;
     color: #fff;
     background-size: cover;
-    background: url("#{$bg}#{bg-star}.jpg") no-repeat center top;
+    background: url("#{$bg}#{bg-star}.jpg") no-repeat center top #000;
     &:after,&::after {
         content: '';
         position: absolute;

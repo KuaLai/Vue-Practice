@@ -3,7 +3,7 @@
     <div v-for="item in cover" :key="item.id" :class="'item-frame-flex '+ item.name">
       <div class="item-hd">
         <div class="item-hd__cover">
-          <img v-bind:src="'assets/images/' + item.image" v-bind:alt=" item.info " />
+          <img :src="require('assets/images/' + item.image)" v-bind:alt=" item.info " />
         </div>
         <div class="item-hd__title">
           <p>
@@ -14,7 +14,7 @@
       </div>
       <div class="item" v-for="i in item.others" :key="i.id">
         <div class="item__cover">
-          <img v-bind:src="'assets/images/' + i.url" v-bind:alt=" i.imgInfo " />
+          <img v-bind:src="i.url" v-bind:alt=" i.imgInfo " />
         </div>
         <div class="item__title item--oc">{{ i.title }}</div>
         <div class="item__content item--oc">{{ i.content }}</div>
