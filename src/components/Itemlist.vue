@@ -3,7 +3,7 @@
       <div class="item" v-for="item in list" :key="item.id">
         <a target="_blank" v-bind:href="item.url">
           <div class="item__cover">
-            <img v-bind:src="item.image" alt="">
+            <img v-bind:src="item.image" alt=""/>
           </div>
           <div class="item__title"> {{ item.title }} </div>
           <div class="item__content">  

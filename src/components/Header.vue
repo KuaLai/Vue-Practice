@@ -1,5 +1,5 @@
 <template lang="pug">
-    header
+    header#header
       h1 Kua's Portfolio | 我是賴雪華
       div.intro.slogan
         span 星星發亮是為了讓每一個人有一天都能找到屬於自己的星星。

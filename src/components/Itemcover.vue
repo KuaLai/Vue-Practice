@@ -3,7 +3,7 @@
     <div v-for="item in cover" :key="item.id" :class="'item-frame-flex '+ item.name">
       <div class="item-hd">
         <div class="item-hd__cover">
-          <img :src="require('assets/images/' + item.image)" v-bind:alt=" item.info " />
+          <img v-lazy="require('assets/images/' + item.image)" v-bind:alt=" item.info " />
         </div>
         <div class="item-hd__title">
           <p>

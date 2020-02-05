@@ -65,6 +65,7 @@ export default {
   },
   created() {
     this.$router.beforeEach((to, from, next) => {
+      
       let transitionName =
         to.meta.transitionName ||
         from.meta.transitionName ||
@@ -94,6 +95,7 @@ export default {
       this.transitionName = transitionName;
 
       next();
+      
     });
   },
   methods: {
@@ -107,11 +109,13 @@ export default {
 
       setTimeout(() => {
         element.style.height = height;
-      });
+      },0);
     },
     afterEnter(element) {
       element.style.height = "auto";
-    }
+      window.scrollTo(0, 0);
+    },
+
   },
 };
 </script>

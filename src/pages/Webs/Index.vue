@@ -67,6 +67,13 @@ export default {
         );
       });
     },
+    showImg (index) {
+        this.index = index
+        this.visible = true
+      },
+    handleHide () {
+        this.visible = false
+      }
   },
 };
 </script>

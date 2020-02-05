@@ -6,6 +6,8 @@ import router from './assets/router';
 // import MetaInfo from "vue-meta-info";
 import VueHead from 'vue-head';
 import VueGAPI from 'vue-gapi';
+import VueLazyload from 'vue-lazyload';
+import Lightbox from 'vue-easy-lightbox';
 
 const apiConfig = {
   apiKey: 'AIzaSyBHm7yxG9zXBc0c49IzytJbvxJvIHJpHbA',
@@ -20,6 +22,13 @@ Vue.use(VueHead);
 // Vue.use(MetaInfo);
 // Use the plugin and pass along the configuration
 Vue.use(VueGAPI, apiConfig);
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  loading: 'assets/images/loading.gif',
+  attempt: 1,
+  listenEvents: [ 'scroll' ]
+});
+Vue.use(Lightbox);
 
 Vue.config.productionTip = false;
 Vue.prototype.$ = $;

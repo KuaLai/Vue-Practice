@@ -139,7 +139,11 @@ export default {
           title: "亞東電子商務(原：Go Happy快樂購物網/現：friday購物)",
           years: "2011 年 9 月 - 2015 年 1 月",
           name: "視覺設計師",
-          application: "",
+          application: {
+            skills: ["網頁/網站設計與切版","html5/css3","RWD"],
+            f2e: ["開發工具應用與環境","sublime Text 3"],
+            design: ["視覺設計","EDM/活動頁","主視覺/標準字/logo設計","banner製作"]
+          },
           worktitle: "任內負責職務",
           worklist: {
             1: {
