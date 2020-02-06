@@ -2,7 +2,7 @@
   <section class="wrap-bg02">
     <div class="layout-frame">
     <div class="layout-frame__title">網站/網頁 Webs</div>
-      <itemlist :list="websList" :key="websList.index"></itemlist>
+      <itemlist :list="websList" :key="websList.index"></itemlist>  
     </div>
   </section>
 </template>
@@ -67,13 +67,6 @@ export default {
         );
       });
     },
-    showImg (index) {
-        this.index = index
-        this.visible = true
-      },
-    handleHide () {
-        this.visible = false
-      }
   },
 };
 </script>

@@ -65,6 +65,10 @@
             font-size: 1rem;
             font-weight: bold;
             margin: 0.5rem 1rem 0;
+            @include respond-to(ssm) {
+                line-height: 1.4rem;
+                margin: 0.5rem 1rem;
+            }
         }
         &__content {
             margin: 0 1rem 1rem;
@@ -159,10 +163,16 @@
     .item:nth-child(2) {
         flex: 2;
         padding: 1rem;
+        @include respond-to(ssm) {
+            min-width: calc(96% - 2rem);
+        }
         .item__title {
             font-size: 24px;
             border-bottom: 1px solid #ccc;
             margin-bottom: 1rem;
+            @include respond-to(ssm) {
+                line-height: 2;
+            }
         }
     }
 }

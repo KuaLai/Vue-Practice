@@ -65,8 +65,10 @@ export default {
               const subTitle = item[3];
               const info = item[4];
               const skills = item[5].split(',');
+              const id = i;
 
               skillList.push({
+                id: id,
                 title: title,
                 url: url,
                 image: image,
