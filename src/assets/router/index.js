@@ -6,7 +6,7 @@ import Design from 'pages/Design/Index';
 
 Vue.use(Router);
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   // hash: false,
   routes: [
     {
