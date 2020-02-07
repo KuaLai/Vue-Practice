@@ -68,8 +68,8 @@ export default {
           name: "UI/UX Designer",
           application: {
             skills: ["網頁/網站設計與切版","html5/css3","RWD","sass","jQuery"],
-            f2e: ["前端開發工具應用與環境","Visual Studio Code","vue","vue Element","sketch","gulp","sweetalert"],
-            common: ["專案協同開發應用","Git","Sourcetree","Zeplin"],
+            f2e: ["前端開發工具應用與環境","Visual Studio Code","vue","vue Element","sketch","gulp"],
+            common: ["專案協同開發應用","Git","Zeplin"],
             design: ["視覺設計","官網建置","活動頁","banner製作與分配","公司相關製作物"]
           },
           worktitle: "系統流程規劃設計",

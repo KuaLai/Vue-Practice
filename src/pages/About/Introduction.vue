@@ -11,6 +11,11 @@
                  <li v-for=" i in item.list" :key="i.index"> {{ i }} </li>
              </ul>
             </div>
+            <div class="profile__more">
+              <div class="item" v-for=" j in item.more" :key="j.index">
+                <a target="_blank" v-bind:href=" j.url "><img v-bind:src="j.img" v-bind:alt=" j.alt " /></a>
+              </div>
+            </div>
         </div>
     </div>    
 </template>

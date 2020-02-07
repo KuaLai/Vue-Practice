@@ -33,7 +33,7 @@ export default {
       this.$getGapiClient().then(gapi => {
         const params = {
           spreadsheetId: "1I28y55s_o1fmism0528qP3ZoTB8b04Xh-Nuh7dK7M6A",
-          range: "'introduction'!A2:D10",
+          range: "'introduction'!A2:E10",
           valueRenderOption: "FORMATTED_VALUE",
           dateTimeRenderOption: "FORMATTED_STRING"
         };
@@ -50,12 +50,29 @@ export default {
               const name = item[1];
               const title = item[2];
               const list = item[3].split("|");
+              const more = item[4].split("|");
+              const textList = [];
+
+              for (let j = 0; j < more.length; j++) {
+                
+                const info = more[j].split(','); 
+                const url = info[0];
+                const img = info[1];
+                const alt = info[2];
+
+                textList.push({
+                  url: url,
+                  img: img,
+                  alt: alt
+                }) 
+              }
 
               profile.push({
                 image: image,
                 name: name,
                 title: title,
-                list: list
+                list: list,
+                more: textList
               });
             }
             vm.profile = profile;

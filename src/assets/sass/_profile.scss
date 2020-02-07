@@ -4,22 +4,33 @@
     text-align: center;
     min-height: 276px;
     &__img {
-        transform: translate(0,-75px);
-        margin: 0 auto;
+        margin: -75px auto 0.5rem;
         @include circle(150px,rgba(0,0,0,0));
         overflow: hidden;
     }
     &__name {
         font-size: 1.2rem;
-        transform: translate(0,-45px);
     }
     &__title {
-        transform: translate(0,-45px);
+        margin-bottom: 1rem;
     }
     &__content {
-        transform: translate(0,-25px);
         @include respond-to(ssm) {
             padding: 0 1rem;
+            text-align: left;
+            li {
+                margin-bottom: 0.4rem;
+            }
+        }
+    }
+    &__more {
+        display: flex;
+        max-width: 80%;
+        margin: 1rem auto 2rem;
+        justify-content: center;
+        .item {
+            max-width: 32px;
+            margin: 0 0.4rem;
         }
     }
 }
@@ -55,14 +66,14 @@
         &:after,&::after {
             content: '';
             width: 1px;
-            height: 96.4%;
+            height: 96.5%;
             @include translate-center;
             top: 0;
             transform: translate(-50%, 0%);
             background: #222;
             @include respond-to(sm) {
                 left: 0;
-                height: 98.4%;
+                height: 98.6%;
             }
         }
     }
