@@ -3,8 +3,10 @@
     z-index: 11;
     text-align: center;
     min-height: 276px;
+    transition: all ease-in-out 0.4s;
     &__img {
         margin: -75px auto 0.5rem;
+        
         @include circle(150px,rgba(0,0,0,0));
         overflow: hidden;
     }
@@ -259,72 +261,72 @@
         }
     }
 
-    .pie-wrapper {
-        @include size($default-size, $default-size);
-        position: relative;
+    // .pie-wrapper {
+    //     @include size($default-size, $default-size);
+    //     position: relative;
 
-        .pie {
-            @include size(100%, 100%);
-            clip: rect(0, $default-size, $default-size, $default-size / 2);
-            left: 0;
-            position: absolute;
-            top: 0;
+    //     .pie {
+    //         @include size(100%, 100%);
+    //         clip: rect(0, $default-size, $default-size, $default-size / 2);
+    //         left: 0;
+    //         position: absolute;
+    //         top: 0;
 
-            .half-circle {
-                @include size(100%, 100%);
-                border: ($default-size / 14) solid #3498db;
-                border-radius: 50%;
-                clip: rect(0, $default-size / 2, $default-size, 0);
-                left: 0;
-                position: absolute;
-                top: 0;
-            }
-        }
+    //         .half-circle {
+    //             @include size(100%, 100%);
+    //             border: ($default-size / 14) solid #3498db;
+    //             border-radius: 50%;
+    //             clip: rect(0, $default-size / 2, $default-size, 0);
+    //             left: 0;
+    //             position: absolute;
+    //             top: 0;
+    //         }
+    //     }
 
-        .label {
-            background: $bg-color;
-            border-radius: 50%;
-            bottom: $label-font-size-redo / 10;
-            color: #ecf0f1;
-            cursor: default;
-            display: block;
-            font-size: $label-font-size;
-            left: $label-font-size-redo / 10;
-            line-height: $label-font-size-redo * .70;
-            position: absolute;
-            right: $label-font-size-redo / 10;
-            text-align: center;
-            top: $label-font-size-redo / 10;
+    //     .label {
+    //         background: $bg-color;
+    //         border-radius: 50%;
+    //         bottom: $label-font-size-redo / 10;
+    //         color: #ecf0f1;
+    //         cursor: default;
+    //         display: block;
+    //         font-size: $label-font-size;
+    //         left: $label-font-size-redo / 10;
+    //         line-height: $label-font-size-redo * .70;
+    //         position: absolute;
+    //         right: $label-font-size-redo / 10;
+    //         text-align: center;
+    //         top: $label-font-size-redo / 10;
 
-            .smaller {
-                color: #bdc3c7;
-                font-size: .45em;
-                padding-bottom: 20px;
-                vertical-align: super;
-            }
-        }
+    //         .smaller {
+    //             color: #bdc3c7;
+    //             font-size: .45em;
+    //             padding-bottom: 20px;
+    //             vertical-align: super;
+    //         }
+    //     }
 
-        .shadow {
-            @include size(100%, 100%);
-            border: $default-size / 10 solid #bdc3c7;
-            border-radius: 50%;
-        }
+    //     .shadow {
+    //         @include size(100%, 100%);
+    //         border: $default-size / 10 solid #bdc3c7;
+    //         border-radius: 50%;
+    //     }
 
-        &.style-2 {
-            .label {
-                background: none;
-                color: #7f8c8d;
+    //     &.style-2 {
+    //         .label {
+    //             background: none;
+    //             color: #7f8c8d;
 
-                .smaller {
-                    color: #bdc3c7;
-                }
-            }
-        }
+    //             .smaller {
+    //                 color: #bdc3c7;
+    //             }
+    //         }
+    //     }
 
         
 
 
-    }
+    // }
 
     &__title {
         font-size: 1.8rem;
@@ -343,20 +345,28 @@
         align-items: center;
         margin: 1rem 0;
         flex-wrap: wrap;
+        width: 100%;
     }
 
     &__item {
-       
         .item {
+            position: relative;
+            margin: 0 0.5rem;
+        }
+        .vue-easy-pie-chart {
+            position: relative;
+        }
+       
+        .inner-text {
             @include translate-center;
             z-index: 3;
+            margin-top: 6px;
         }
 
         .item-title {
-            font-size: 15px;
-            @include respond-to(ssm) {
-                font-size: 0.8rem;
-            }
+            @include translate-center;
+            margin-top: -30px;
+            font-size: 0.8rem;
         }
 
         .item-percent {
@@ -376,29 +386,29 @@
     }
 
     &:nth-child(1) {
-        $item-percent: 95, 95, 80, 80, 50, 0;
+        // $item-percent: 95, 95, 80, 80, 50, 0;
 
-        @for $i from 1 to length($item-percent) {
-            .skill__item {
-                &:nth-child(#{$i}) {
-                    .pie-wrapper {
-                        @include draw-progress(nth($item-percent, $i), #3498db);
-                    }
-                }
-            }
-        }
+        // @for $i from 1 to length($item-percent) {
+        //     .skill__item {
+        //         &:nth-child(#{$i}) {
+        //             .pie-wrapper {
+        //                 @include draw-progress(nth($item-percent, $i), #3498db);
+        //             }
+        //         }
+        //     }
+        // }
     }
     &:nth-child(2) {
-        $item-percent: 95, 95, 90, 65, 55, 0;
+        // $item-percent: 95, 95, 90, 65, 55, 0;
 
-        @for $i from 1 to length($item-percent) {
-            .skill__item {
-                &:nth-child(#{$i}) {
-                    .pie-wrapper {
-                        @include draw-progress(nth($item-percent, $i), #ff6633);
-                    }
-                }
-            }
-        }
+        // @for $i from 1 to length($item-percent) {
+        //     .skill__item {
+        //         &:nth-child(#{$i}) {
+        //             .pie-wrapper {
+        //                 @include draw-progress(nth($item-percent, $i), #ff6633);
+        //             }
+        //         }
+        //     }
+        // }
     }
 }

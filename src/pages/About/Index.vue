@@ -1,6 +1,6 @@
 <template>
   <section class="wrap-bg01">
-    <Introduction :list="profile" :key="profile.index"></Introduction>
+    <Introduction v-if="isReady" :list="profile" :key="profile.index"></Introduction>
     <Experience></Experience>
     <Skill></Skill>
   </section>
@@ -20,7 +20,8 @@ export default {
   },
   data: function() {
     return {
-      profile: []
+      profile: [],
+      isReady: false
     };
   },
   mounted() {
@@ -76,6 +77,7 @@ export default {
               });
             }
             vm.profile = profile;
+            vm.isReady = true
           },
           function(reason) {
             console.error("error:", reason);
@@ -89,4 +91,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+.box { 
+  height: 60px; 
+  width: 60px; 
+  background: red; 
+}
 </style>
