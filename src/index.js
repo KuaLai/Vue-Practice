@@ -8,6 +8,7 @@ import VueHead from 'vue-head';
 import VueGAPI from 'vue-gapi';
 import VueLazyload from 'vue-lazyload';
 import Lightbox from 'vue-easy-lightbox';
+var VueFinger = require('vue-finger');
 
 const apiConfig = {
   apiKey: 'AIzaSyBHm7yxG9zXBc0c49IzytJbvxJvIHJpHbA',
@@ -29,6 +30,7 @@ Vue.use(VueLazyload, {
   listenEvents: [ 'scroll' ]
 });
 Vue.use(Lightbox);
+Vue.use(VueFinger);
 
 Vue.config.productionTip = false;
 Vue.prototype.$ = $;

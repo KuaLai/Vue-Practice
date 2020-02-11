@@ -1,5 +1,7 @@
-<template lang="pug">
-    footer {{ msg }}
+<template>
+  <footer>
+    <div class="copyright">{{ msg }}</div>
+  </footer>
 </template>
 
 
@@ -8,14 +10,8 @@ export default {
   name: "Footer",
   props: {
     msg: String
-  },
-  methods: {
-  }
+  }, 
 };
-
-
-
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

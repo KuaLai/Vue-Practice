@@ -1,4 +1,57 @@
+.slide-show {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 250px;
+    padding: 0 0 1rem 0;
+    overflow: hidden;
+    @include respond-to(ssm) {
+        overflow: auto;
+        height: auto;
+        min-height: 40vh;
+        overflow-x: hidden; 
+    }
+    .brand {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        justify-content: center;
+        @include respond-to(ssm) {
+            flex-wrap: wrap;
+            width: 90%;
+        }
+        img {
+            max-width: 25%;
+            margin: 0 10px;
+            @include respond-to(ssm) {
+                max-width: 45%;
+                height: 45%;
+                margin: 0 5px;
+            }
+        }
+    }
+}
+.slide-pages {
+    @include translate-center;
+    top: 85%;
+    @include respond-to(ssm) {
+        top: 90%;
+    }
+    li {
+        display: inline-block;
+        margin: 0 5px;
+    }
+    span {
+        display: block;
+        cursor: pointer;
+        @include circle(8px,#ccc);
+        &.on {
+            @include circle(8px,#fb6f78); 
+        }
+    }
 
+}
 .itemlist {
     display: flex;
     flex-wrap: wrap;
@@ -160,6 +213,13 @@
 }
 
 .cover02 {
+    .item-hd__cover {
+        min-height: 200px;
+        overflow: hidden;
+        img {
+            width: 150%;
+        }
+    }
     .item:nth-child(2) {
         flex: 2;
         padding: 1rem;
