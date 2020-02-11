@@ -35,9 +35,17 @@ export default {
   components: { VueEasyPieChart },
   methods: {
     handleScroll: function (event) {
+      let vm = this;
       const sheetTop = this.$refs.sheet.getBoundingClientRect().top;
-      if ( sheetTop <= 360 ) {
-        let vm = this;
+      console.log(screen.width ,screen.height);
+      if ( sheetTop <= 500 ) {       
+        for(const item of vm.list){
+          for(const skill of item.skill){
+            skill.currentPercent = skill.percent;
+          }
+        }
+      }
+      if(screen.width > 2050 || screen.height > 1200 ) {
         for(const item of vm.list){
           for(const skill of item.skill){
             skill.currentPercent = skill.percent;
@@ -108,6 +116,7 @@ export default {
               currentPercent: 0
             },
             {
+              
               title: "RWD",
               color: "rgba(255, 0, 0, 0.6)",
               percent: 90,

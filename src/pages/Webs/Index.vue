@@ -66,7 +66,7 @@ export default {
     };
   },
   created(){
-    this.timerun()
+    this.autoPlayBanner(4000);
   },
   computed:{
     nextindex(){
@@ -132,15 +132,29 @@ export default {
     },goto(index){
       let that = this;
       this.ifshow = false;
+      that.reSet();
+      setTimeout(function(){
+        that.ifshow = true;
+        that.nowindex = index;
+      },100)},go(index){
+      let that = this;
+      this.ifshow = false;
       setTimeout(function(){
         that.ifshow = true;
         that.nowindex = index;
       },100)},
-      timerun(){
-          let that = this;
-          setInterval(function(){
-            that.goto(that.nextindex)
-        },4000);
+      autoPlayBanner(el,isReset = false){
+        let that = this;
+        if( isReset === false){
+          let timeRun = setInterval(function(){that.go(that.nextindex)},el);        
+        } else {
+          clearInterval(timeRun);
+          timeRun = setInterval(function(){that.go(that.nextindex)},el);
+        }
+        // let timeRun = setInterval(function(){that.go(that.nextindex)},el);
+      },
+      reSet(){
+        this.autoPlayBanner(4000,true);
       },
        swipe: function (evt) {
         let that = this;
