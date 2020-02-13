@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import About from 'pages/About/Index';
 import Webs from 'pages/Webs/Index';
 import Design from 'pages/Design/Index';
+import Contact from 'pages/Contact/Index';
 
 Vue.use(Router);
 export default new Router({
@@ -31,6 +32,10 @@ export default new Router({
       path: '/design',
       name: 'design',
       component: Design,
-    },
+    },{
+      path: '/contact',
+      name: 'contact',
+      component: Contact,
+    }
   ],
 });

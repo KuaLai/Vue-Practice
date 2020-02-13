@@ -1,7 +1,7 @@
 <template lang="pug">
     div.nav
       ul
-        each item,index in {'about':'關於我','webs':'網頁設計','design':'其他作品'}
+        each item,index in {'about':'關於我','webs':'網頁設計','design':'其他作品','contact':'聯絡我'}
             li(data-url=key)
                 router-link(to=index)
                     =item

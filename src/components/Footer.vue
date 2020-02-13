@@ -8,9 +8,7 @@
 <script>
 export default {
   name: "Footer",
-  props: {
-    msg: String
-  }, 
+  props: { msg: String }
 };
 </script>
 
