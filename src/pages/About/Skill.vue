@@ -37,7 +37,6 @@ export default {
     handleScroll: function (event) {
       let vm = this;
       const sheetTop = this.$refs.sheet.getBoundingClientRect().top;
-      console.log(screen.width ,screen.height);
       if ( sheetTop <= 500 ) {       
         for(const item of vm.list){
           for(const skill of item.skill){

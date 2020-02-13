@@ -42,31 +42,36 @@ export default {
       nowindex:0,
       imgArray: [
         [
-          require('assets/images/logo-a.png'),
-          require('assets/images/logo-b.png'),
-          require('assets/images/logo-c.png'),
-          require('assets/images/logo-g.png'),
+          require('assets/images/logo-nike.png'),
+          require('assets/images/logo-adidas.png'),
+          require('assets/images/logo-benz.png'),
+          require('assets/images/logo-porsche.png'),
         ],[
-          require('assets/images/logo-d.png'),
-          require('assets/images/logo-f.png'),
-          require('assets/images/logo-e.png'),
-          require('assets/images/logo-h.png'),
+          require('assets/images/logo-sk2.png'),
+          require('assets/images/logo-sulwhasoo.png'),
+          require('assets/images/logo-whoo.png'),
+          require('assets/images/logo-clinique.png'),
         ],[
-          require('assets/images/logo-i.png'),
-          require('assets/images/logo-j.png'),
-          require('assets/images/logo-k.png'),
-          require('assets/images/logo-l.png'),
+          require('assets/images/logo-uni.png'),
+          require('assets/images/logo-7-ELEVEn.png'),
+          require('assets/images/logo-familymart.png'),
+          require('assets/images/logo-watsons.png'),
         ],[
-          require('assets/images/logo-m.png'),
-          require('assets/images/logo-n.png'),
-          require('assets/images/logo-o.png'),
-          require('assets/images/logo-p.png'),
+          require('assets/images/logo-citibank.png'),
+          require('assets/images/logo-ctbcbank.png'),
+          require('assets/images/logo-dbsbank.png'),
+          require('assets/images/logo-megabank.png'),
+        ],[
+          require('assets/images/logo-sony.png'),
+          require('assets/images/logo-panasonic.png'),
+          require('assets/images/logo-aeonmall.png'),
+          require('assets/images/logo-nissin.png'),
         ]
       ]
     };
   },
   created(){
-    this.autoPlayBanner(4000);
+    this.autoPlayBanner(4000,"run");
   },
   computed:{
     nextindex(){
@@ -129,32 +134,31 @@ export default {
           }
         );
       });
-    },goto(index){
-      let that = this;
-      this.ifshow = false;
-      that.reSet();
-      setTimeout(function(){
-        that.ifshow = true;
-        that.nowindex = index;
-      },100)},go(index){
-      let that = this;
-      this.ifshow = false;
-      setTimeout(function(){
-        that.ifshow = true;
-        that.nowindex = index;
-      },100)},
-      autoPlayBanner(el,isReset = false){
+    },
+      go(index){
         let that = this;
-        if( isReset === false){
-          let timeRun = setInterval(function(){that.go(that.nextindex)},el);        
+        that.ifshow = false;
+        setTimeout(function(){
+          that.ifshow = true;
+          that.nowindex = index;
+        },100)},
+      autoPlayBanner(el,v){
+        let that = this;
+        if(v === "run" ){
+          that.timeRun = setInterval(() => {that.go(that.nextindex)},el);
         } else {
-          clearInterval(timeRun);
-          timeRun = setInterval(function(){that.go(that.nextindex)},el);
-        }
-        // let timeRun = setInterval(function(){that.go(that.nextindex)},el);
+          clearInterval(this.timeRun);
+          that.timeRun = setInterval(() => {that.go(that.nextindex)},el);
+        } 
       },
-      reSet(){
-        this.autoPlayBanner(4000,true);
+      goto(index){
+        let that = this;
+        that.autoPlayBanner(4000,"reSet");      
+        that.ifshow = false;
+        setTimeout(function(){
+          that.ifshow = true;
+          that.nowindex = index;
+        },100)
       },
        swipe: function (evt) {
         let that = this;
