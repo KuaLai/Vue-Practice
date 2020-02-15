@@ -3,4 +3,4 @@
 - Javascript 練習
 - webpack 練習
 - 利用 google sheet API當資料庫練習
-- 利用 google sheet 接收回傳資料練習(目前專案未開放)
+- 利用 google sheet 接收回傳資料練習

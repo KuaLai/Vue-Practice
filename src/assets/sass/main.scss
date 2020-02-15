@@ -7,8 +7,9 @@
 @import "layout";
 @import "profile";
 @import "page";
+@import "contact";
 @import "footer";
-@import "bicycle";
+
 $bg-item: bg;
 .wrap {
     @each $item in $bg-item {
