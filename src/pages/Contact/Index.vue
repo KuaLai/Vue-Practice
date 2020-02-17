@@ -175,7 +175,7 @@ export default {
       let time = vm.getNow();
       $.ajax({
         url:
-          "https://script.google.com/macros/s/AKfycbwZTn_-QxS3besMkYfxvSmg-navDP12h77cXEs1G5NeLBW82ak/exec",
+          "https://script.google.com/macros/s/AKfycbxFxSumSxz1b0ZMLaOqdv4SxXTEWZD2IWz_jlSmtdc8OCemuLg/exec",
         data: {
           'name': name,
           'email': email,
