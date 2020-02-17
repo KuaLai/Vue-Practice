@@ -23,9 +23,34 @@
         <a class="contact__button" href="###" v-on:click="isFormCorrect">送出</a>
       </form>
       <div class="contact__mask" v-if="isLoading">
-        <div class="item" v-if="type === 'A'">正在寄送中</div>
-        <div v-else>您的訊息已送達！
-          <a href="###" v-on:click="isClose">關閉</a>
+        <div class="item" v-if="type === 'A'">
+          <div class="item__loading">
+            <div class="loadingio-spinner-spinner-6sqfm6wq48r">
+              <div class="ldio-6jor80znkkd">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+          <div class="item__text">正在寄送中</div>
+        </div>
+        <div class="item" v-else>
+          <div class="item__icon" v-bind:class="{'tick':isSuccess}"><svg width="18px" height="18px" viewBox="0 0 18 18">
+            <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+            <polyline points="1 9 7 14 15 4"></polyline>
+          </svg></div>
+          <div class="item__text"> 您的訊息已傳送，謝謝 <span>收到信件後會盡快回覆您 ：）</span> </div>
+          <a class="item__button" href="###" v-on:click="isClose">關閉</a>
         </div>
       </div>
     </div>
@@ -39,10 +64,12 @@ export default {
   name: 'contact',
   data: function() {
     return {
+      isSuccess: false,
       check: false,
       isFormError: false,
       isLoading: false,
       type: "A",
+      itemClass: "item__icon",
       formTitle: "聯絡我 Contact Me",
       formList: [
         {
@@ -85,6 +112,7 @@ export default {
       this.$refs.message.value = "";
       this.check = false;
       this.type = "A";
+      this.isSuccess = false;
     },
     getNow: function() {
       const today = new Date();
@@ -157,6 +185,9 @@ export default {
         },
         success: function(response) {
           vm.type = "B";
+          setTimeout(function() {
+            vm.isSuccess = true;
+          }, 100);
         }
       });
     }
